@@ -1,11 +1,8 @@
 version: "3"
 services:
   backend-factura:
-    image: bncc111/backend-factura
+    image: bncc111/backend-prueba2-factura
     container_name: backend-factura
-    build:
-      context: https://SmartByt3r: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@github.com/Wolfant/prueba-automatizacion-back.git#main
-      dockerfile: Dockerfile
     expose:
       - "3000"
     # ports:
@@ -14,11 +11,8 @@ services:
       - netnpx
 
   react-factura:
-    image: bncc111/react-factura
+    image: bncc111/react-prueba2-factura
     container_name: react-factura
-    build:
-      context: https://SmartByt3r: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@github.com/Wolfant/prueba-automatizacion-front.git#main
-      dockerfile: Dockerfile
     ports:
       - "80:80"
     networks:

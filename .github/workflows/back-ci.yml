@@ -32,3 +32,9 @@ jobs:
         cd ./backend 
         npm i
         npm test
+  call-workflow-1-in-local-repo:
+    uses: UpsStudents/prueba2-automatizacion/.github/docker-publish.yml
+    with:
+      config-path: "./backend/"
+      image-name: "backend-prueba2-factura"
+      secrets: inherit
