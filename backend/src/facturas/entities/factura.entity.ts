@@ -1,20 +1,19 @@
-
-import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Factura {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    detalle: string;
+  @Column()
+  detalle: string;
 
-    @Column()
-    fecha: string;
+  @Column()
+  fecha: string;
 
-    @Column()
-    valor: number;
+  @Column({ nullable: false, type: 'float' })
+  valor: number;
 
-    @Column()
-    idCliente: string;
+  @Column()
+  idCliente: string;
 }
