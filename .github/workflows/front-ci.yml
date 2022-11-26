@@ -45,6 +45,7 @@ jobs:
     - name: Build and push the Docker image
       uses: docker/build-push-action@v3
       with:
+        context: ./front
         push: true
         tags: ${{secrets.DOCKERHUB_USERNAME}}/react-prueba2-factura:latest
         file: ./front/Dockerfile
