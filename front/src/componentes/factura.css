@@ -1,0 +1,17 @@
+.factura {
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.factura h2 {
+  text-align: center;
+}
+
+.factura > * {
+  margin: 0;
+}

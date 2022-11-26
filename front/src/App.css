@@ -1,0 +1,11 @@
+.facturas-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+}

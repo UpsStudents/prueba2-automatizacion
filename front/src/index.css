@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  background-color: cadetblue;
+  color: whitesmoke;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px #dbdbdb;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(72, 121, 122);
+  cursor: pointer;
+}
