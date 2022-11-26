@@ -27,7 +27,7 @@ jobs:
     - name: Build and push the Docker image
       uses: docker/build-push-action@v3
       with:
-        context: ${{config-path}}
+        context: ${{inputs.config-path}}
         push: true
-        tags: ${{secrets.DOCKERHUB_USERNAME}}/${{image-name}}:latest
+        tags: ${{secrets.DOCKERHUB_USERNAME}}/${{inputs.image-name}}:latest
         file: Dockerfile
