@@ -32,3 +32,9 @@ jobs:
         cd ./front 
         npm i
         npm test
+  call-workflow-1-in-local-repo:
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      config-path: "./front/"
+      image-name: "react-prueba2-factura"
+    secrets: inherit

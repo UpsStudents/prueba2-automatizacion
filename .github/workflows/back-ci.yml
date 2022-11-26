@@ -37,4 +37,4 @@ jobs:
     with:
       config-path: "./backend/"
       image-name: "backend-prueba2-factura"
-      secrets: inherit
+    secrets: inherit
