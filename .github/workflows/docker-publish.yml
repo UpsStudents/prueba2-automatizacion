@@ -3,7 +3,7 @@ name: Deploy Image Workflow
 on:
   workflow_call:
     inputs:
-      config-path:
+      dockerfile-path:
         required: true
         type: string
       image-name:
@@ -27,7 +27,6 @@ jobs:
     - name: Build and push the Docker image
       uses: docker/build-push-action@v3
       with:
-        context: ${{inputs.config-path}}
         push: true
         tags: ${{secrets.DOCKERHUB_USERNAME}}/${{inputs.image-name}}:latest
-        file: Dockerfile
+        file: ${{inputs.dockerfile-path}}
