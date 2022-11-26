@@ -32,9 +32,19 @@ jobs:
         cd ./front 
         npm i
         npm test
-  call-workflow-1-in-local-repo:
-    uses: ./.github/workflows/docker-publish.yml
-    with:
-      config-path: "./front/"
-      image-name: "react-prueba2-factura"
-    secrets: inherit
+
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_TOKEN}}
+      
+    - name: Build and push the Docker image
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: ${{secrets.DOCKERHUB_USERNAME}}/react-prueba2-factura:latest
+        file: ./front/Dockerfile
