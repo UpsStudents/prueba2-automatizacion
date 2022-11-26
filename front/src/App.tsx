@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <h1>Crear comprobante</h1>
+      <h1>Crear factura</h1>
       <FacturaForm
         onCreate={() => {
           FacturasService.getFacturas().then((facturas) => {
