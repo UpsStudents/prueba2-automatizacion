@@ -7,12 +7,11 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class FacturasService {
-
   constructor(
     @InjectRepository(Factura)
     private facturaRepository: Repository<Factura>,
   ) {}
-  
+
   create(createFacturaDto: CreateFacturaDto) {
     return this.facturaRepository.save(createFacturaDto);
   }
@@ -22,12 +21,13 @@ export class FacturasService {
   }
 
   findOne(id: number) {
-    return this.facturaRepository.findOneBy({id});
+    return this.facturaRepository.query(
+      `SELECT * FROM facturas WHERE id = ${id}`,
+    );
   }
 
   update(id: number, updateFacturaDto: UpdateFacturaDto) {
-   return this.facturaRepository.update(id, updateFacturaDto);
-    
+    return this.facturaRepository.update(id, updateFacturaDto);
   }
 
   remove(id: number) {
