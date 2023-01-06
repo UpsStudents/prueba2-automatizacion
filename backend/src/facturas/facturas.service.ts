@@ -20,10 +20,11 @@ export class FacturasService {
     return this.facturaRepository.find();
   }
 
-  findOne(id: number) {
-    return this.facturaRepository.query(
-      `SELECT * FROM facturas WHERE id = ${id}`,
-    );
+  findOne(id: string) {
+    console.log(id);
+    const query = `SELECT * FROM factura WHERE id = ${id}`;
+    console.log(query);
+    return this.facturaRepository.query(query);
   }
 
   update(id: number, updateFacturaDto: UpdateFacturaDto) {
