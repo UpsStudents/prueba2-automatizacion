@@ -27,7 +27,7 @@ export class FacturasController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.facturasService.findOne(+id);
+    return this.facturasService.findOne(id);
   }
 
   @Patch(':id')
